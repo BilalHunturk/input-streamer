@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using MouseTracer.Palettes;
 using System.Diagnostics;
 using MouseTracer.WindowService;
-using System.Threading;
-using Keystroke.API.CallbackObjects;
-using System.Linq;
 
 namespace MouseTracer
 {
@@ -18,8 +13,6 @@ namespace MouseTracer
         //private readonly //graphics //graph;
 
         private readonly Rectangle screenBounds;
-
-        private readonly ColorPalette palette;
 
         private MouseState currentState;
 
@@ -52,20 +45,11 @@ namespace MouseTracer
 
         public Tracer()
         {
-            //screenBounds = Utils.GetScreenSize();
-            //Image = new Bitmap(screenBounds.Width, screenBounds.Height);
-            //
-            ////graph = //graphics.FromImage(Image);
-            ////graph.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            ////graph.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
-            ////graph.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            ////graph.Clear(palette.Background);
         }
 
         public void Dispose()
         {
             SetRunning(false);
-            //graph.Dispose();
             Image.Dispose();
         }
 
@@ -174,7 +158,7 @@ namespace MouseTracer
             {
                 User32.PostMessage(window.GethWnd(), WM_LBUTTONDOWN, 1, lParam);
                 User32.PostMessage(window.GethWnd(), WM_LBUTTONUP, 0, lParam);
-                //Thread.Sleep(50);
+                
             }
             Console.WriteLine(windows.FindAll(window => window.IsToggled).Count);
         }

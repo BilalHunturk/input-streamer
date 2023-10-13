@@ -1,5 +1,4 @@
-﻿using MouseTracer.Palettes;
-using MouseTracer.WindowService;
+﻿using MouseTracer.WindowService;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -17,7 +16,6 @@ namespace MouseTracer
 
         private bool running = false;
         private bool unsavedChanges = false;
-        private ColorPalette currentPalette;
         WindowManager windowManager;
 
         public MainWindow()
